@@ -9,3 +9,7 @@
 <img src="img-readme/img.png">
 <img src="img-readme/img_1.png">
 <img src="img-readme/img_2.png">
+
+résumé des commandes pour relancer la db :
+docker-compose down -v - arrête et supprime les volumes
+docker-compose up -d database - relance la base de données
