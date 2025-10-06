@@ -9,10 +9,10 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 @Service
-public class userService {
+public class UserService {
     private final UserDAO userDAO;
 
-    public userService(UserDAO userDAO){
+    public UserService(UserDAO userDAO){
         this.userDAO=userDAO;
     }
 
@@ -26,6 +26,17 @@ public class userService {
 
     public User createUser(User user){
         return userDAO.save(user);
+    }
+
+    public User updateUser(Long id, User updatedUser) {
+        return userDAO.findById(id)
+                .map(user -> {
+                    user.setFirstName(updatedUser.getFirstName());
+                    user.setLastName(updatedUser.getLastName());
+                    user.setEmail(updatedUser.getEmail());
+                    return userDAO.save(user);
+                })
+                .orElse(null);
     }
 
     public User deleteUser(Long id){
