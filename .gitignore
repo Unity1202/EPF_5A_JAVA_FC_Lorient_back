@@ -1,0 +1,69 @@
+# =========================
+# Java / Maven
+# =========================
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# =========================
+# IDE / Éditeurs
+# =========================
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# =========================
+# OS / Système
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Environnement / Secrets
+# =========================
+.env
+.env.local
+*.env.*
+!.env.sample    # garder le modèle vierge pour les devs
+
+# =========================
+# Docker
+# =========================
+# Dossiers montés ou générés par Docker
+db_data/
+**/docker-entrypoint-initdb.d/*.bak
+**/docker-entrypoint-initdb.d/*.tmp
+
+# =========================
+# Logs / Temp
+# =========================
+*.log
+logs/
+tmp/
+*.tmp
+*.swp
+
+# =========================
+# Build tools / cache
+# =========================
+.mvn/
+mvnw.cmd
+mvnw
+!pom.xml    # garder le fichier de config Maven
+!docker-compose.yml
+
