@@ -55,9 +55,7 @@ create table coachs
     dateOfBirth TIMESTAMP not null,
     nationality INT not null,
     FOREIGN KEY (nationality) REFERENCES countries(id),
-    crest TEXT not null,
-    teamId INT not null,
-    FOREIGN KEY (teamId) REFERENCES teams(id)
+    crest TEXT not null
 );
 
 create table players
@@ -70,9 +68,7 @@ create table players
     shirtNumber INT not null,
     nationality INT not null,
     FOREIGN KEY (nationality) REFERENCES countries(id),
-    crest TEXT not null,
-    teamId INT not null,
-    FOREIGN KEY (teamId) REFERENCES teams(id)
+    crest TEXT not null
 );
 
 create table matchs
@@ -80,12 +76,12 @@ create table matchs
     id SERIAL PRIMARY KEY,
     utcDate TIMESTAMP not null,
     status TEXT not null,
-    score_home INT not null,
-    score_away INT not null,
+    score_home INT,
+    score_away INT,
     homeTeamId INT not null,
     awayTeamId INT not null,
     FOREIGN KEY (homeTeamId) REFERENCES teams(id),
-    FOREIGN KEY (awayTeamId) REFERENCES teams(id),
+    FOREIGN KEY (awayTeamId) REFERENCES teams(id)
 );
 
 create table forum
@@ -93,7 +89,7 @@ create table forum
     id SERIAL PRIMARY KEY,
     userId INT not null,
     message TEXT not null,
-    createdAt TIMESTAMP not null
+    createdAt TIMESTAMP not null,
     FOREIGN KEY (userId) REFERENCES users(id)
 );
 

@@ -1,6 +1,10 @@
 -- script d'insertion de données pour les tables
 
--- 1. insertion des pays (countries)
+-- 1. insertion des administrateurs (admins)
+insert into admins (firstName, lastName, email, password) values
+('Admin', 'Admin', 'admin@football.fr', 'admin123');
+
+-- 2. insertion des pays (countries)
 insert into countries (name, flag) values
 ('france', 'https://www.fclorient.bzh/voy_content/themes/fclorient_v2/img/flags/fr.png'),
 ('sénégal', 'https://www.fclorient.bzh/voy_content/themes/fclorient_v2/img/flags/sn.png'),
@@ -17,48 +21,8 @@ insert into countries (name, flag) values
 ('norvège', 'https://www.fclorient.bzh/voy_content/themes/fclorient_v2/img/flags/no.png'),
 ('bénin', 'https://www.fclorient.bzh/voy_content/themes/fclorient_v2/img/flags/bj.png');
 
--- 2. insertion des entraineurs (coachs)
-insert into coachs (firstName, lastName, dateOfBirth, nationality, crest, teamId) values
-('Olivier', 'Pantaloni', '1966-12-13', 1, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/pantaloni-360x600.png', 13);
-
--- 3. insertion des joueurs (players) - fc lorient
-insert into players (firstName, lastName, position, dateOfBirth, shirtNumber, nationality, crest, teamId) values
--- gardiens
-('Benjamin', 'Leroy', 'gardien', '1989-04-07', 1, 1, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/leroy-360x600.png', 13),
-('Bingourou', 'Kamara', 'gardien', '1996-10-21', 21, 2, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/kamara-360x600.png', 13),
-('Yvon', 'Mvogo', 'gardien', '1994-06-06', 38, 3, 'http://fclorient.bzh/voy_content/uploads/2022/07/Mvogo-2-360x600.png', 13),
-
--- défenseurs
-('Igor', 'Silva', 'défenseur', '1996-08-21', 2, 4, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/silva-360x600.png', 13),
-('Montassar', 'Talbi', 'défenseur', '1998-05-26', 3, 5, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/talbi-360x600.png', 13),
-('Bamo', 'Meité', 'défenseur', '2001-06-20', 5, 6, 'https://www.fclorient.bzh/voy_content/uploads/2022/07/Bamo-Meite-360x600.png', 13),
-('Faye', 'Abdoulaye', 'défenseur', '2004-09-22', 25, 2, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/Faye-360x600.png', 13),
-('Nathaniel', 'Adjei', 'défenseur', '2002-08-21', 32, 7, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/adjei-360x600.png', 13),
-('Arsène', 'Kouassi', 'défenseur', '2004-09-11', 43, 8, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/kouassi-360x600.png', 13),
-('Darlin', 'Yongwa', 'défenseur', '2000-09-21', 44, 9, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/yongwa-360x600.png', 13),
-('Panos', 'Katseris', 'défenseur', '2001-07-05', 77, 10, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/katseris-360x600.png', 13),
-('Isaak', 'Toure', 'défenseur', '2003-03-28', 95, 1, 'https://www.fclorient.bzh/voy_content/uploads/2022/07/Isaak-Toure-360x600.png', 13),
-
--- milieux
-('Laurent', 'Abergel', 'milieu', '1993-02-01', 6, 1, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/abergel-360x600.png', 13),
-('Bandiougou', 'Fadiga', 'milieu', '2001-01-15', 7, 1, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/Fadiga-360x600.png', 13),
-('Noah', 'Cadiou', 'milieu', '1998-10-26', 8, 1, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/cadiou-360x600.png', 13),
-('Théo', 'Le Bris', 'milieu', '2002-10-01', 11, 1, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/le-bris-theo-360x600.png', 13),
-('Trevan', 'Sanusi', 'milieu', '2007-04-25', 14, 11, 'https://www.fclorient.bzh/voy_content/uploads/2022/07/trevan-sanusi-360x600.png', 13),
-('Jean-Victor', 'Makengo', 'milieu', '1998-06-12', 17, 1, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/makengo-360x600.png', 13),
-('Dermane', 'Karim', 'milieu', '2003-12-26', 29, 12, 'https://www.fclorient.bzh/voy_content/uploads/2022/07/dermane-karim-360x600.png', 13),
-('Arthur', 'Avom Ebong', 'milieu', '2004-12-15', 62, 9, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/avom-360x600.png', 13),
-('Joel', 'Mvuka', 'milieu', '2002-11-12', 93, 13, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/mvuka-360x600.png', 13),
-
--- attaquants
-('Mohamed', 'Bamba', 'attaquant', '2001-12-10', 9, 6, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/Mo-Bamba-360x600.png', 13),
-('Pablo', 'Pagis', 'attaquant', '2002-12-29', 10, 1, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/pablo-pagis-360x600.png', 13),
-('Bamba', 'Dieng', 'attaquant', '2000-03-23', 12, 2, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/dieng-360x600.png', 13),
-('Aiyegun', 'Tosin', 'attaquant', '1998-06-26', 15, 14, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/tosin-360x600.png', 13),
-('Sambou', 'Soumano', 'attaquant', '2001-01-03', 28, 1, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/soumano-360x600.png', 13);
-
--- 4. insertion des équipes (teams)
-insert into teams (name, shortName, crest, rank, points, played, won, drawn, lost) values
+-- 3. insertion des équipes (teams)
+insert into teams (name, shortName, crest, rank, points, played, won, drawn, lost, diff) values
 ('Paris-SG', 'PSG', 'https://www.fclorient.bzh/voy_content/uploads/2015/11/psg-logo-489x489.png', 1, 16, 7, 5, 1, 1, 8),
 ('Marseille', 'OM', 'https://www.fclorient.bzh/voy_content/uploads/2015/11/logo_olympique_de_marseille.png', 2, 15, 7, 5, 0, 2, 10),
 ('Strasbourg', 'Strasbourg', 'https://www.fclorient.bzh/voy_content/uploads/2020/07/1200px-racing_club_de_strasbourg_alsace_rc_strasbourg_-_rcs_-_rcsa_logo_officiel.svg-510x510.png', 3, 15, 7, 5, 0, 2, 7),
@@ -71,14 +35,54 @@ insert into teams (name, shortName, crest, rank, points, played, won, drawn, los
 ('Rennes', 'Rennes', 'https://www.fclorient.bzh/voy_content/uploads/2016/06/rennes.png', 10, 10, 7, 2, 4, 1, -1),
 ('Brest', 'Brest', 'https://www.fclorient.bzh/voy_content/uploads/2017/06/396px-logo_stade_brestois.svg.png', 11, 8, 7, 2, 2, 3, 0),
 ('OGC Nice', 'Nice', 'https://www.fclorient.bzh/voy_content/uploads/2015/11/ogc-nice-e1482340704762.png', 12, 8, 7, 2, 2, 3, -3),
-('FC Lorient', 'Lorient', 'https://www.fclorient.bzh/voy_content/uploads/2023/03/logo.svg', 13, 7, 2, 1, 4, -7),
+('FC Lorient', 'Lorient', 'https://www.fclorient.bzh/voy_content/uploads/2023/03/logo.svg', 13, 7, 7, 2, 1, 4, -7),
 ('Le Havre', 'Le Havre', 'https://www.fclorient.bzh/voy_content/uploads/2017/06/le-havre-ac.png', 14, 6, 7, 1, 3, 3, -2),
 ('FC Nantes', 'Nantes', 'https://www.fclorient.bzh/voy_content/uploads/2015/11/803px-fc_nantes_2019_logo.svg-471x600.png', 15, 6, 7, 1, 3, 3, -2),
 ('Auxerre', 'Auxerre', 'https://www.fclorient.bzh/voy_content/uploads/2017/06/auxerre_logo-474x600.png', 16, 6, 7, 2, 0, 5, -5),
 ('Angers', 'Angers', 'https://www.fclorient.bzh/voy_content/uploads/2015/11/logo_angers_sco_-_2021.svg-504x600.png', 17, 5, 7, 1, 2, 4, -8),
 ('Metz', 'Metz', 'https://www.fclorient.bzh/voy_content/uploads/2016/06/fc_metz_2021_logo.svg-420x600.png', 18, 2, 7, 0, 2, 5, -11);
 
--- 5. insertion des matchs (matchs)
+-- 4. insertion des entraineurs (coachs)
+insert into coachs (firstName, lastName, dateOfBirth, nationality, crest) values
+('Olivier', 'Pantaloni', '1966-12-13', 1, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/pantaloni-360x600.png');
+
+-- 5. insertion des joueurs (players) - fc lorient
+insert into players (firstName, lastName, position, dateOfBirth, shirtNumber, nationality, crest) values
+-- gardiens
+('Benjamin', 'Leroy', 'gardien', '1989-04-07', 1, 1, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/leroy-360x600.png'),
+('Bingourou', 'Kamara', 'gardien', '1996-10-21', 21, 2, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/kamara-360x600.png'),
+('Yvon', 'Mvogo', 'gardien', '1994-06-06', 38, 3, 'http://fclorient.bzh/voy_content/uploads/2022/07/Mvogo-2-360x600.png'),
+
+-- défenseurs
+('Igor', 'Silva', 'défenseur', '1996-08-21', 2, 4, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/silva-360x600.png'),
+('Montassar', 'Talbi', 'défenseur', '1998-05-26', 3, 5, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/talbi-360x600.png'),
+('Bamo', 'Meité', 'défenseur', '2001-06-20', 5, 6, 'https://www.fclorient.bzh/voy_content/uploads/2022/07/Bamo-Meite-360x600.png'),
+('Faye', 'Abdoulaye', 'défenseur', '2004-09-22', 25, 2, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/Faye-360x600.png'),
+('Nathaniel', 'Adjei', 'défenseur', '2002-08-21', 32, 7, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/adjei-360x600.png'),
+('Arsène', 'Kouassi', 'défenseur', '2004-09-11', 43, 8, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/kouassi-360x600.png'),
+('Darlin', 'Yongwa', 'défenseur', '2000-09-21', 44, 9, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/yongwa-360x600.png'),
+('Panos', 'Katseris', 'défenseur', '2001-07-05', 77, 10, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/katseris-360x600.png'),
+('Isaak', 'Toure', 'défenseur', '2003-03-28', 95, 1, 'https://www.fclorient.bzh/voy_content/uploads/2022/07/Isaak-Toure-360x600.png'),
+
+-- milieux
+('Laurent', 'Abergel', 'milieu', '1993-02-01', 6, 1, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/abergel-360x600.png'),
+('Bandiougou', 'Fadiga', 'milieu', '2001-01-15', 7, 1, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/Fadiga-360x600.png'),
+('Noah', 'Cadiou', 'milieu', '1998-10-26', 8, 1, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/cadiou-360x600.png'),
+('Théo', 'Le Bris', 'milieu', '2002-10-01', 11, 1, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/le-bris-theo-360x600.png'),
+('Trevan', 'Sanusi', 'milieu', '2007-04-25', 14, 11, 'https://www.fclorient.bzh/voy_content/uploads/2022/07/trevan-sanusi-360x600.png'),
+('Jean-Victor', 'Makengo', 'milieu', '1998-06-12', 17, 1, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/makengo-360x600.png'),
+('Dermane', 'Karim', 'milieu', '2003-12-26', 29, 12, 'https://www.fclorient.bzh/voy_content/uploads/2022/07/dermane-karim-360x600.png'),
+('Arthur', 'Avom Ebong', 'milieu', '2004-12-15', 62, 9, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/avom-360x600.png'),
+('Joel', 'Mvuka', 'milieu', '2002-11-12', 93, 13, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/mvuka-360x600.png'),
+
+-- attaquants
+('Mohamed', 'Bamba', 'attaquant', '2001-12-10', 9, 6, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/Mo-Bamba-360x600.png'),
+('Pablo', 'Pagis', 'attaquant', '2002-12-29', 10, 1, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/pablo-pagis-360x600.png'),
+('Bamba', 'Dieng', 'attaquant', '2000-03-23', 12, 2, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/dieng-360x600.png'),
+('Aiyegun', 'Tosin', 'attaquant', '1998-06-26', 15, 14, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/tosin-360x600.png'),
+('Sambou', 'Soumano', 'attaquant', '2001-01-03', 28, 1, 'https://www.fclorient.bzh/voy_content/uploads/2024/07/soumano-360x600.png');
+
+-- 6. insertion des matchs (matchs)
 insert into matchs (utcDate, status, score_home, score_away, homeTeamId, awayTeamId) values
 ('2025-10-19 17:15', 'scheduled', null, null, 13, 11),
 ('2025-10-26 17:15', 'scheduled', null, null, 17, 13),
@@ -86,10 +90,6 @@ insert into matchs (utcDate, status, score_home, score_away, homeTeamId, awayTea
 ('2025-09-21 17:15', 'drawn', 1, 1, 14, 13),
 ('2025-09-27 17:15', 'won', 3, 1, 13, 5),
 ('2025-10-03 20:45', 'lost', 2, 0, 8, 13);
-
--- 6. insertion des administrateurs (admins)
-insert into admins (firstName, lastName, email, password) values
-('Admin', 'Admin', 'admin@football.fr', 'admin123');
 
 -- 7. insertion des produits (store)
 insert into store (name, description, image, price) values
@@ -134,7 +134,7 @@ A dominante noire, il arbore une élégante bande dorée sur le côté. Les logo
 
 
 -- 8. insertion des articles (articles) - fc lorient
-insert into articles (title, content, image, source, createdAt) values
+insert into articles (title, content, image, createdAt) values
 ('Sélections nationales : Quatre Lorientais sur le pont', 
 'Quatre Merlus sont sur le pont durant cette trêve internationale. Le point sur les programmes respectifs de nos joueurs :
 
@@ -347,7 +347,7 @@ EA Guingamp – FC Lorient, samedi à 16h00 à l’Akademi EAG
 U17 Régionaux
 FC Lorient – AS Vitré, samedi à 11h00 à l’Espace FCL (T2)',
 'https://www.fclorient.bzh/voy_content/uploads/2025/10/DSC0006-1680x839.jpg',
-'2025-10-03')
+'2025-10-03'),
 ('Paris FC – FC Lorient : La conférence de presse avant la rencontre', 
 'https://youtu.be/Av1jRUsZEH4',
 'https://www.fclorient.bzh/voy_content/uploads/2025/09/A9303800-1920x839.jpg',

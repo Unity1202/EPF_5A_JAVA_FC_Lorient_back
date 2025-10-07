@@ -10,6 +10,20 @@
 <img src="img-readme/img_1.png">
 <img src="img-readme/img_2.png">
 
-résumé des commandes pour relancer la db :
-docker-compose down -v - arrête et supprime les volumes
-docker-compose up -d database - relance la base de données
+## commandes pour la base de données
+
+### lancer la base de données
+```bash
+docker-compose up -d
+```
+
+### arrêter la base de données
+```bash
+docker-compose down
+```
+
+### réinitialiser complètement la base de données (supprime toutes les données)
+```bash
+docker-compose down -v
+docker-compose up -d
+```
