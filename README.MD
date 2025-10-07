@@ -9,3 +9,21 @@
 <img src="img-readme/img.png">
 <img src="img-readme/img_1.png">
 <img src="img-readme/img_2.png">
+
+## commandes pour la base de données
+
+### lancer la base de données
+```bash
+docker-compose up -d
+```
+
+### arrêter la base de données
+```bash
+docker-compose down
+```
+
+### réinitialiser complètement la base de données (supprime toutes les données)
+```bash
+docker-compose down -v
+docker-compose up -d
+```
