@@ -22,7 +22,6 @@ create table articles
     title TEXT not null,
     content TEXT not null,
     image TEXT not null,
-    source TEXT not null,
     createdAt TIMESTAMP not null
 );
 
@@ -33,6 +32,21 @@ create table countries
     flag TEXT not null
 );
 
+create table teams
+(
+    id SERIAL PRIMARY KEY,
+    name TEXT not null,
+    shortName TEXT not null,
+    crest TEXT not null,
+    rank INT not null,
+    points INT not null,
+    played INT not null,
+    won INT not null,
+    drawn INT not null,
+    lost INT not null,
+    diff INT not null
+);
+
 create table coachs
 (
     id SERIAL PRIMARY KEY,
@@ -41,7 +55,9 @@ create table coachs
     dateOfBirth TIMESTAMP not null,
     nationality INT not null,
     FOREIGN KEY (nationality) REFERENCES countries(id),
-    crest TEXT not null
+    crest TEXT not null,
+    teamId INT not null,
+    FOREIGN KEY (teamId) REFERENCES teams(id)
 );
 
 create table players
@@ -54,27 +70,9 @@ create table players
     shirtNumber INT not null,
     nationality INT not null,
     FOREIGN KEY (nationality) REFERENCES countries(id),
-    crest TEXT not null
-);
-
-create table teams
-(
-    id SERIAL PRIMARY KEY,
-    name TEXT not null,
-    shortName TEXT not null,
     crest TEXT not null,
-    rank INT not null,
-    coachId INT not null,
-    FOREIGN KEY (coachId) REFERENCES coachs(id)
-);
-
-create table team_players
-(
     teamId INT not null,
-    playerId INT not null,
-    PRIMARY KEY (teamId, playerId),
-    FOREIGN KEY (teamId) REFERENCES teams(id),
-    FOREIGN KEY (playerId) REFERENCES players(id)
+    FOREIGN KEY (teamId) REFERENCES teams(id)
 );
 
 create table matchs
@@ -82,15 +80,28 @@ create table matchs
     id SERIAL PRIMARY KEY,
     utcDate TIMESTAMP not null,
     status TEXT not null,
-    venue TEXT not null,
-    matchday INT not null,
-    lastUpdated TIMESTAMP not null,
-    winner TEXT not null,
-    winnerCode TEXT not null,
     score_home INT not null,
     score_away INT not null,
     homeTeamId INT not null,
     awayTeamId INT not null,
     FOREIGN KEY (homeTeamId) REFERENCES teams(id),
-    FOREIGN KEY (awayTeamId) REFERENCES teams(id)
+    FOREIGN KEY (awayTeamId) REFERENCES teams(id),
+);
+
+create table forum
+(
+    id SERIAL PRIMARY KEY,
+    userId INT not null,
+    message TEXT not null,
+    createdAt TIMESTAMP not null
+    FOREIGN KEY (userId) REFERENCES users(id)
+);
+
+create table store
+(
+    id SERIAL PRIMARY KEY,
+    name TEXT not null,
+    description TEXT not null,
+    image TEXT not null,
+    price FLOAT not null
 );
