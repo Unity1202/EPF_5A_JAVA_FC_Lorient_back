@@ -10,9 +10,12 @@ public class Player {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(name="firstname")
     private String firstName;
+    @Column(name="lastname")
     private String lastName;
     private String position;
+    @Column(name="dateofbirth")
     private Timestamp birthDate;
     @Column(name="shirtnumber")
     private int shirtNumber;
