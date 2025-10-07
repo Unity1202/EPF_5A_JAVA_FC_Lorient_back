@@ -33,7 +33,7 @@ public class PlayerService {
             player.setLastName(playerDetails.getLastName());
             player.setPosition(playerDetails.getPosition());
             player.setBirthDate(playerDetails.getBirthDate());
-            player.setJerseyNumber(playerDetails.getJerseyNumber());
+            player.setshirtNumber(playerDetails.getshirtNumber());
             player.setNationality(playerDetails.getNationality());
             player.setCrest(playerDetails.getCrest());
             return playerDAO.save(player);

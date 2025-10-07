@@ -14,7 +14,7 @@ public class PlayerMapper {
             player.getLastName(),
             player.getPosition(),
             player.getBirthDate(),
-            player.getJerseyNumber(),
+            player.getshirtNumber(),
             player.getNationality(),
             player.getCrest()
         );
@@ -28,7 +28,7 @@ public class PlayerMapper {
         player.setLastName(dto.getLastName());
         player.setPosition(dto.getPosition());
         player.setBirthDate(dto.getBirthDate());
-        player.setJerseyNumber(dto.getJerseyNumber());
+        player.setshirtNumber(dto.getshirtNumber());
         player.setNationality(dto.getNationality());
         player.setCrest(dto.getCrest());
         return player;
