@@ -9,7 +9,7 @@ public class User {
     private long id;
 
     private String LastName;
-    private String FirstName;
+    private String firstName;
     private String email;
     private String password;
 
@@ -17,7 +17,7 @@ public class User {
 
     public User(String LastName, String FirstName, String email, String password){
         this.LastName=LastName;
-        this.FirstName=FirstName;
+        this.firstName=FirstName;
         this.email=email;
         this.password=password;
     }
@@ -31,11 +31,11 @@ public class User {
     }
 
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
-        FirstName = firstName;
+        this.firstName = firstName;
     }
 
     public String getEmail() {
@@ -52,5 +52,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

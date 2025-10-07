@@ -1,43 +1,55 @@
 package com.takima.backskeleton.controllers;
 
+import com.takima.backskeleton.DTO.UserDTO;
+import com.takima.backskeleton.mappers.UserMapper;
 import com.takima.backskeleton.models.User;
 import com.takima.backskeleton.services.UserService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/users")
-public class userController {
-    private final UserService userService;
+public class UserController {
 
-    public userController(UserService userService){
-        this.userService=userService;
+    private final UserService userService;
+    private final UserMapper userMapper;
+
+    public UserController(UserService userService, UserMapper userMapper) {
+        this.userService = userService;
+        this.userMapper = userMapper;
     }
 
     @GetMapping
-    public List<User> getAllUsers(){
-        return userService.getAllUsers();
+    public List<UserDTO> getAllUsers() {
+        return userService.getAllUsers()
+                .stream()
+                .map(userMapper::toDto)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/{id}")
-    public Optional<User> getUserById(@PathVariable Long id){
-        return userService.getUserById(id);
+    public UserDTO getUserById(@PathVariable Long id) {
+        return userService.getUserById(id)
+                .map(userMapper::toDto)
+                .orElse(null);
     }
 
     @PostMapping
-    public User createUser(@RequestBody User user){
-        return userService.createUser(user);
-    }
-
-    @DeleteMapping("/{id}")
-    public User deleteUser(@PathVariable Long id){
-        return userService.deleteUser(id);
+    public UserDTO createUser(@RequestBody UserDTO userDTO) {
+        User user = userMapper.toEntity(userDTO);
+        return userMapper.toDto(userService.createUser(user));
     }
 
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable Long id, @RequestBody User updatedUser) {
-        return userService.updateUser(id, updatedUser);
+    public UserDTO updateUser(@PathVariable Long id, @RequestBody UserDTO userDTO) {
+        User updated = userMapper.toEntity(userDTO);
+        return userMapper.toDto(userService.updateUser(id, updated));
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
     }
 }
