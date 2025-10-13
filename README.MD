@@ -1,6 +1,7 @@
 # 🧡​ FC Lorient Backend API 🧡​
 
-Ce repo est un backend API pour un site de football du FC Lorient. 
+Ce repo est un backend API pour un site de football du FC Lorient.
+
 Il permet de gérer toutes les données du club : joueurs, matchs, actualités, boutique et forum communautaire. Les utilisateurs peuvent se connecter pour écrire des messages dans le forum et les admins peuvent écrire de nouveaux articles.
 
 *Groupe : Grégoire BRUN, Cornel CRISTEA, Quentin DEHARO, Alexis DHERMY*
