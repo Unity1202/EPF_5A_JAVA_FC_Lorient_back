@@ -7,27 +7,31 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-    private String LastName;
+    @Column(name = "firstname")
     private String firstName;
+    @Column(name = "lastname")
+    private String lastName;
+    
+    @Column(name = "email")
     private String email;
+    @Column(name = "password")
     private String password;
 
     public User(){}
 
-    public User(String LastName, String FirstName, String email, String password){
-        this.LastName=LastName;
+    public User(String lastName, String FirstName, String email, String password){
+        this.lastName=lastName;
         this.firstName=FirstName;
         this.email=email;
         this.password=password;
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
 
     public String getFirstName() {

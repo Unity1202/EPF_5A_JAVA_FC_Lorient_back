@@ -45,4 +45,9 @@ public class UserService {
         userDAO.deleteById(id);
         return user;
     }
+
+    public boolean login(String email, String password){
+        User user = userDAO.findByEmail(email);
+        return user != null && user.getPassword() == password;
+    }
 }
