@@ -38,8 +38,7 @@ Thumbs.db
 # =========================
 .env
 .env.local
-*.env.*
-!.env.sample    # garder le modèle vierge pour les devs
+!.env.example    # garder le modèle vierge pour les devs
 
 # =========================
 # Docker

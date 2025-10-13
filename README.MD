@@ -1,29 +1,40 @@
-# Your backend API
+# 🧡​ FC Lorient Backend API 🧡​
 
-## Set up 
-1. Copie-colle le `.env.sample` en `.env`
-2. Remplis le fichier `.env` avec les credentials de ton choix
-3. Fait un `docker compose up`
-4. Rajoute le plugin : [env-file](https://plugins.jetbrains.com/plugin/7861-envfile)
-5. Ajoute ton fichier `.env` comme ci-dessous (n'oublie pas d'activer les fichiers cachés)
-<img src="img-readme/img.png">
-<img src="img-readme/img_1.png">
-<img src="img-readme/img_2.png">
+## Installation et Configurations
 
-## commandes pour la base de données
-
-### lancer la base de données
+### 1. Configuration des variables d'environnement
+Copiez le fichier `env.example` dans un fichier `.env` et remplissez-le avec vos credentials :
 ```bash
-docker-compose up -d
+DATABASE_NAME=your_database_name
+DATABASE_USER=your_database_user
+DATABASE_PASSWORD=your_database_password
 ```
 
-### arrêter la base de données
+### 2. Création et démarrage de la base de données
+Lancez la base de données avec docker compose :
 ```bash
-docker-compose down
+docker compose up
 ```
 
-### réinitialiser complètement la base de données (supprime toutes les données)
+### 3. Lancement du backend
+Utilisez maven pour démarrer l'application :
 ```bash
-docker-compose down -v
-docker-compose up -d
+mvn spring-boot:run
 ```
+
+### 4. URL du backend
+```bash
+http://localhost:8080
+```
+Pour tester si la connexion à la base de données est fonctionnelle, vous pouvez utiliser l'url suivante :
+```bash
+http://localhost:8080/players
+```
+
+### 5. Arrêt des services
+Pour stopper la base de données :
+```bash
+docker compose down
+```
+
+<img src="https://www.fclorient.bzh/voy_content/uploads/2023/03/logo.svg" width="100" alt="FC Lorient">
