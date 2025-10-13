@@ -87,9 +87,18 @@ insert into matchs (utcDate, status, score_home, score_away, homeTeamId, awayTea
 ('2025-10-19 17:15', 'scheduled', null, null, 13, 11),
 ('2025-10-26 17:15', 'scheduled', null, null, 17, 13),
 ('2025-10-29 19:00', 'scheduled', null, null, 13, 1),
+('2025-11-02 17:15', 'scheduled', null, null, 6, 13),
+('2025-11-09 15:00', 'scheduled', null, null, 13, 9),
+('2025-11-23 17:15', 'scheduled', null, null, 15, 13),
+('2025-11-30 17:15', 'scheduled', null, null, 13, 12),
 ('2025-09-21 17:15', 'drawn', 1, 1, 14, 13),
 ('2025-09-27 17:15', 'won', 3, 1, 13, 5),
-('2025-10-03 20:45', 'lost', 2, 0, 8, 13);
+('2025-10-03 20:45', 'lost', 2, 0, 8, 13),
+('2025-09-12 20:45', 'lost', 4, 0, 2, 13),
+('2025-08-30 17:00', 'lost', 1, 7, 13, 7),
+('2025-08-24 15:00', 'won', 4, 0, 13, 10),
+('2025-08-17 17:15', 'lost', 1, 0, 16, 13);
+
 
 -- 7. insertion des produits (store)
 insert into store (name, description, image, price) values
@@ -135,6 +144,15 @@ A dominante noire, il arbore une élégante bande dorée sur le côté. Les logo
 
 -- 8. insertion des articles (articles) - fc lorient
 insert into articles (title, content, image, createdAt) values
+('Entraînement : Le programme de la semaine',
+'Lundi 13 octobre : Entraînement à 10h30
+Mardi 14 octobre : Entraînement à 10h30
+Mercredi 15 octobre : Repos
+Jeudi 16 octobre : Entraînement à 10h30
+Vendredi 17 octobre : Entraînement à 10h30
+Samedi 18 octobre : Entraînement à 16h00 (huis clos)
+Dimanche 19 octobre : FC Lorient – Stade Brestois 29 à 17h15 (8ème journée de Ligue 1 McDonald’s)', 
+'https://www.fclorient.bzh/voy_content/uploads/2025/09/A9306844-1680x839.jpg', '2025-10-13'),
 ('Sélections nationales : Quatre Lorientais sur le pont', 
 'Quatre Merlus sont sur le pont durant cette trêve internationale. Le point sur les programmes respectifs de nos joueurs :
 
