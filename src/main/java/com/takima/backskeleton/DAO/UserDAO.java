@@ -7,4 +7,5 @@ import com.takima.backskeleton.models.User;
 
 @Repository
 public interface UserDAO extends JpaRepository<User, Long> {
+    User findByEmail(String email);
 }
