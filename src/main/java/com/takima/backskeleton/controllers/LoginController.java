@@ -7,6 +7,7 @@ import com.takima.backskeleton.services.UserService;
 
 @RestController
 @RequestMapping("/auth")
+@CrossOrigin(origins = "http://localhost:4200")
 public class LoginController {
     private final UserDAO userDAO;
     private final UserService userService;
