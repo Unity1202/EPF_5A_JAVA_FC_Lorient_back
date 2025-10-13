@@ -1,12 +1,12 @@
 package com.takima.backskeleton.services;
 
-import com.takima.backskeleton.DAO.UserDAO;
-import com.takima.backskeleton.models.User;
-
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
+
+import com.takima.backskeleton.DAO.UserDAO;
+import com.takima.backskeleton.models.User;
 
 @Service
 public class UserService {
@@ -48,6 +48,10 @@ public class UserService {
 
     public boolean login(String email, String password){
         User user = userDAO.findByEmail(email);
-        return user != null && user.getPassword() == password;
-    }
+
+        if (user == null) {
+            return false; 
+        }
+        return user != null && user.getPassword().equals(password);
+}
 }

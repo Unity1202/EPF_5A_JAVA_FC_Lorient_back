@@ -1,14 +1,20 @@
 package com.takima.backskeleton.controllers;
 
-import com.takima.backskeleton.models.User;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.takima.backskeleton.DAO.UserDAO;
-import org.springframework.web.bind.annotation.*;
 import com.takima.backskeleton.services.UserService;
 
 @RestController
 @RequestMapping("/auth")
 @CrossOrigin(origins = "http://localhost:4200")
 public class LoginController {
+    @SuppressWarnings("unused")
     private final UserDAO userDAO;
     private final UserService userService;
 
@@ -17,7 +23,7 @@ public class LoginController {
         this.userService = userService;
     }
     
-    @PostMapping("LoginUser")
+    @PostMapping("/LoginUser")
     public boolean login(@RequestBody LoginRequest loginRequest){
         return userService.login(loginRequest.getEmail(), loginRequest.getPassword());
     }
