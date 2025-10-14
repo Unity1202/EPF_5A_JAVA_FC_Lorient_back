@@ -18,6 +18,7 @@ import com.takima.backskeleton.mappers.PlayerMapper;
 import com.takima.backskeleton.models.Player;
 import com.takima.backskeleton.services.PlayerService;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/players")
 @CrossOrigin(origins = "http://localhost:4200")

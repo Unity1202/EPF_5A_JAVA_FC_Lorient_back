@@ -1,5 +1,6 @@
 package com.takima.backskeleton.controllers;
 
+<<<<<<< HEAD
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,14 +14,26 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+=======
+>>>>>>> devStef
 import com.takima.backskeleton.DTO.MatchDTO;
 import com.takima.backskeleton.mappers.MatchMapper;
 import com.takima.backskeleton.models.Match;
 import com.takima.backskeleton.services.MatchService;
+<<<<<<< HEAD
 
 @RestController
 @RequestMapping("/matchs")
 @CrossOrigin(origins = "http://localhost:4200")
+=======
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@RestController
+@RequestMapping("/matchs")
+>>>>>>> devStef
 public class MatchController {
 
     private final MatchService matchService;
