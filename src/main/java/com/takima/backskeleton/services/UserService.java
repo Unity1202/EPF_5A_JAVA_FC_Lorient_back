@@ -48,6 +48,6 @@ public class UserService {
 
     public boolean login(String email, String password){
         User user = userDAO.findByEmail(email);
-        return user != null && user.getPassword() == password;
+        return user != null && user.getPassword().equals(password);
     }
 }
