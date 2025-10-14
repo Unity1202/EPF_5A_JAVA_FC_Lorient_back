@@ -1,6 +1,5 @@
 package com.takima.backskeleton.controllers;
 
-<<<<<<< HEAD
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,26 +13,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-=======
->>>>>>> devStef
 import com.takima.backskeleton.DTO.ArticleDTO;
 import com.takima.backskeleton.mappers.ArticleMapper;
 import com.takima.backskeleton.models.Article;
 import com.takima.backskeleton.services.ArticleService;
-<<<<<<< HEAD
 
 @RestController
 @RequestMapping("/articles")
 @CrossOrigin(origins = "http://localhost:4200")
-=======
-import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
-@RestController
-@RequestMapping("/articles")
->>>>>>> devStef
 public class ArticleController {
 
     private final ArticleService articleService;

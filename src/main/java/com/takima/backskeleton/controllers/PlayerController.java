@@ -21,7 +21,6 @@ import com.takima.backskeleton.services.PlayerService;
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/players")
-@CrossOrigin(origins = "http://localhost:4200")
 public class PlayerController {
 
     private final PlayerService playerService;

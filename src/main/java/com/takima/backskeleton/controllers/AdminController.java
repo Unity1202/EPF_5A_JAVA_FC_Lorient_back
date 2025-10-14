@@ -1,6 +1,5 @@
 package com.takima.backskeleton.controllers;
 
-<<<<<<< HEAD
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,26 +13,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-=======
->>>>>>> devStef
 import com.takima.backskeleton.DTO.AdminDTO;
 import com.takima.backskeleton.mappers.AdminMapper;
 import com.takima.backskeleton.models.Admin;
 import com.takima.backskeleton.services.AdminService;
-<<<<<<< HEAD
 
 @RestController
 @RequestMapping("/admins")
 @CrossOrigin(origins = "http://localhost:4200")
-=======
-import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.stream.Collectors;
 
-@RestController
-@RequestMapping("/admins")
->>>>>>> devStef
 public class AdminController {
 
     private final AdminService adminService;
