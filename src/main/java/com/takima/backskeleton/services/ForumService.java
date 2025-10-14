@@ -1,18 +1,26 @@
 package com.takima.backskeleton.services;
 
-import com.takima.backskeleton.DAO.ForumDAO;
-import com.takima.backskeleton.models.Forum;
-import org.springframework.stereotype.Service;
-
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import com.takima.backskeleton.DAO.ForumDAO;
+import com.takima.backskeleton.DAO.UserDAO;
+import com.takima.backskeleton.models.Forum;
+
 @Service
 public class ForumService {
-    private final ForumDAO forumDAO;
 
-    public ForumService(ForumDAO forumDAO) {
+    private final ForumDAO forumDAO;
+    private final UserDAO userDAO;
+
+    public ForumService(ForumDAO forumDAO, UserDAO userDAO) {
         this.forumDAO = forumDAO;
+        this.userDAO = userDAO;
     }
 
     public List<Forum> getAllForums() {
@@ -24,6 +32,21 @@ public class ForumService {
     }
 
     public Forum createForum(Forum forum) {
+        if (forum == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Payload manquant");
+        }
+        if (forum.getUserId() <= 0) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "userId invalide");
+        }
+        if (forum.getMessage() == null || forum.getMessage().trim().isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "message requis");
+        }
+        if (!userDAO.existsById((long) forum.getUserId())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "userId inconnu");
+        }
+        if (forum.getCreatedAt() == null) {
+            forum.setCreatedAt(new Timestamp(System.currentTimeMillis()));
+        }
         return forumDAO.save(forum);
     }
 
