@@ -7,5 +7,9 @@ import com.takima.backskeleton.models.User;
 
 @Repository
 public interface UserDAO extends JpaRepository<User, Long> {
+
     User findByEmail(String email);
+
+    // Méthode alternative insensible à la casse (peut nécessiter une requête personnalisée)
+    User findByEmailIgnoreCase(String email);
 }

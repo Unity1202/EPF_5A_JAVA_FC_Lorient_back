@@ -2,7 +2,7 @@
 
 -- 1. insertion des administrateurs (admins)
 insert into admins (firstName, lastName, email, password) values
-('Admin', 'Admin', 'admin@football.fr', 'admin123');
+('Admin', 'Admin', '', 'admin123');
 
 -- 2. insertion des pays (countries)
 insert into countries (name, flag) values
@@ -370,3 +370,34 @@ FC Lorient – AS Vitré, samedi à 11h00 à l’Espace FCL (T2)',
 'https://youtu.be/Av1jRUsZEH4',
 'https://www.fclorient.bzh/voy_content/uploads/2025/09/A9303800-1920x839.jpg',
 '2025-10-02');
+
+-- 9. insertion des utilisateurs (users)
+insert into users (firstname, lastname, email, password) values
+('Jean', 'Dupont', 'jean.dupont@email.fr', 'password123'),
+('Marie', 'Martin', 'marie.martin@email.fr', 'password123'),
+('Pierre', 'Bernard', 'pierre.bernard@email.fr', 'password123'),
+('Sophie', 'Dubois', 'sophie.dubois@email.fr', 'password123'),
+('Thomas', 'Moreau', 'thomas.moreau@email.fr', 'password123'),
+('Julie', 'Laurent', 'julie.laurent@email.fr', 'password123'),
+('François', 'Simon', 'francois.simon@email.fr', 'password123'),
+('Camille', 'Michel', 'camille.michel@email.fr', 'password123'),
+('Antoine', 'Garcia', 'antoine.garcia@email.fr', 'password123'),
+('Léa', 'David', 'lea.david@email.fr', 'password123');
+
+-- 10. insertion des messages du forum (forum)
+insert into forum (userid, message, createdat) values
+(1, 'Quelle belle victoire contre Monaco ! Les Merlus étaient en feu samedi dernier. 🔥', '2025-09-28 18:30:00'),
+(2, 'Je suis impressionné par la performance de Pablo Pagis cette saison. Un vrai talent !', '2025-10-01 14:20:00'),
+(3, 'Le match contre le PSG approche. J''ai hâte de voir comment on va se défendre face à eux.', '2025-10-05 10:15:00'),
+(4, 'Bonne chance aux joueurs en sélection cette semaine ! 🇫🇷', '2025-10-06 09:00:00'),
+(5, 'Le maillot du centenaire est magnifique ! J''ai déjà commandé le mien. 💙🧡', '2025-10-08 16:45:00'),
+(6, 'Quelqu''un peut me dire où acheter les billets pour le prochain match à domicile ?', '2025-10-09 11:30:00'),
+(1, 'Le retour dans l''élite se passe bien. On tient le rythme ! Allez les Merlus ! 💪', '2025-10-10 20:00:00'),
+(7, 'J''ai assisté à l''entraînement hier, l''ambiance était super. Les joueurs sont motivés.', '2025-10-11 08:15:00'),
+(8, 'Le forum est une excellente initiative pour échanger entre supporters. Merci !', '2025-10-12 15:30:00'),
+(9, 'Que pensez-vous de la tactique d''Olivier Pantaloni cette saison ?', '2025-10-13 12:00:00'),
+(3, 'Le prochain match contre Brest sera crucial. On doit gagner à domicile !', '2025-10-14 19:45:00'),
+(10, 'Félicitations à Montassar Talbi pour sa sélection avec la Tunisie ! 🇹🇳', '2025-10-15 10:20:00'),
+(2, 'Les jeunes talents du centre de formation sont prometteurs. L''avenir est radieux ! ⭐', '2025-10-16 14:10:00'),
+(5, 'J''aimerais organiser un déplacement supporter pour le match à Lens. Qui est partant ?', '2025-10-17 16:30:00'),
+(6, 'Le nouveau stade est magnifique. Quelle fierté de supporter ce club ! 🏟️', '2025-10-18 11:00:00');

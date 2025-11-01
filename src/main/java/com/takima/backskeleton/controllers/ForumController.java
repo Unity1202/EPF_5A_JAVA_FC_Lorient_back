@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -48,7 +49,16 @@ public class ForumController {
     }
 
     @PostMapping
-    public ForumDTO createForum(@RequestBody ForumDTO forumDTO) {
+    public ForumDTO createForum(@RequestBody ForumDTO forumDTO, @RequestHeader(value = "X-User-Id", required = true) Integer userId) {
+        // L'userId est obligatoire depuis le header (utilisateur connecté)
+        if (userId == null || userId <= 0) {
+            throw new org.springframework.web.server.ResponseStatusException(
+                    org.springframework.http.HttpStatus.UNAUTHORIZED,
+                    "Vous devez être connecté pour envoyer un message"
+            );
+        }
+
+        forumDTO.setUserId(userId);
         Forum forum = forumMapper.toEntity(forumDTO);
         return forumMapper.toDto(forumService.createForum(forum));
     }
