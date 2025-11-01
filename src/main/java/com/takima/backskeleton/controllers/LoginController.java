@@ -56,9 +56,14 @@ public class LoginController {
 
         // Vérifier si c'est un admin
         if (adminService.login(loginRequest.getEmail(), loginRequest.getPassword())) {
-            LoginResponse response = new LoginResponse();
-            response.setUserType("admin");
-            return ResponseEntity.accepted().body(response);
+            com.takima.backskeleton.models.Admin admin = adminService.getAdminByEmail(email);
+            if (admin != null) {
+                LoginResponse response = new LoginResponse();
+                response.setUserId((int) admin.getId());
+                response.setFirstName(admin.getFirstName());
+                response.setUserType("admin");
+                return ResponseEntity.ok(response);
+            }
         }
 
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
