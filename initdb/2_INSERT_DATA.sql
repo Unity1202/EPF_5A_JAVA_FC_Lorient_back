@@ -2,7 +2,7 @@
 
 -- 1. insertion des administrateurs (admins)
 insert into admins (firstName, lastName, email, password) values
-('Admin', 'Admin', '', 'admin123');
+('Admin', 'Admin', 'admin@football.fr', 'admin123');
 
 -- 2. insertion des pays (countries)
 insert into countries (name, flag) values
