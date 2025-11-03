@@ -7,8 +7,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,32 +17,22 @@ public class Forum {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "user_id")
-    private int userId;
-
-    // Legacy/alternate column kept in DB and marked NOT NULL
     @Column(name = "userid")
-    private Integer userIdLegacy;
+    private int userId;
 
     @Column(name = "message")
     private String message;
 
-    @Column(name = "created_at")
-    private Timestamp createdAt;
-
-    // Legacy/alternate column kept in DB
     @Column(name = "createdat")
-    private Timestamp createdAtLegacy;
+    private Timestamp createdAt;
 
     public Forum() {
     }
 
     public Forum(int userId, String message, Timestamp createdAt) {
         this.userId = userId;
-        this.userIdLegacy = userId;
         this.message = message;
         this.createdAt = createdAt;
-        this.createdAtLegacy = createdAt;
     }
 
     public long getId() {
@@ -61,7 +49,6 @@ public class Forum {
 
     public void setUserId(int userId) {
         this.userId = userId;
-        this.userIdLegacy = userId;
     }
 
     public String getMessage() {
@@ -78,26 +65,5 @@ public class Forum {
 
     public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
-        this.createdAtLegacy = createdAt;
-    }
-
-    @PrePersist
-    public void prePersist() {
-        if (this.userIdLegacy == null) {
-            this.userIdLegacy = this.userId;
-        }
-        if (this.createdAtLegacy == null) {
-            this.createdAtLegacy = this.createdAt;
-        }
-    }
-
-    @PreUpdate
-    public void preUpdate() {
-        if (this.userIdLegacy == null) {
-            this.userIdLegacy = this.userId;
-        }
-        if (this.createdAtLegacy == null) {
-            this.createdAtLegacy = this.createdAt;
-        }
     }
 }

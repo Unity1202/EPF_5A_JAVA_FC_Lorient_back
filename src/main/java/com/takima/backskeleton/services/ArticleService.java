@@ -1,14 +1,17 @@
 package com.takima.backskeleton.services;
 
-import com.takima.backskeleton.DAO.ArticleDAO;
-import com.takima.backskeleton.models.Article;
-import org.springframework.stereotype.Service;
-
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
+import com.takima.backskeleton.DAO.ArticleDAO;
+import com.takima.backskeleton.models.Article;
+
 @Service
 public class ArticleService {
+
     private final ArticleDAO articleDAO;
 
     public ArticleService(ArticleDAO articleDAO) {
@@ -24,6 +27,9 @@ public class ArticleService {
     }
 
     public Article createArticle(Article article) {
+        if (article.getCreatedAt() == null) {
+            article.setCreatedAt(new Timestamp(System.currentTimeMillis()));
+        }
         return articleDAO.save(article);
     }
 
@@ -32,7 +38,10 @@ public class ArticleService {
             article.setTitle(articleDetails.getTitle());
             article.setContent(articleDetails.getContent());
             article.setImage(articleDetails.getImage());
-            article.setCreatedAt(articleDetails.getCreatedAt());
+            // Preserve original createdAt if not provided in update
+            if (articleDetails.getCreatedAt() != null) {
+                article.setCreatedAt(articleDetails.getCreatedAt());
+            }
             return articleDAO.save(article);
         }).orElse(null);
     }

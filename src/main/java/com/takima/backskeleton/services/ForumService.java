@@ -24,7 +24,7 @@ public class ForumService {
     }
 
     public List<Forum> getAllForums() {
-        return forumDAO.findAll();
+        return forumDAO.findAllByOrderByCreatedAtDesc();
     }
 
     public Optional<Forum> getForumById(Long id) {

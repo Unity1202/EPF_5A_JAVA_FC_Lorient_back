@@ -1,6 +1,6 @@
 create table users
 (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     firstName TEXT not null,
     lastName TEXT not null,
     email TEXT not null,
@@ -9,7 +9,7 @@ create table users
 
 create table admins
 (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     firstName TEXT not null,
     lastName TEXT not null,
     email TEXT not null,
@@ -18,7 +18,7 @@ create table admins
 
 create table articles
 (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     title TEXT not null,
     content TEXT not null,
     image TEXT not null,
@@ -27,14 +27,14 @@ create table articles
 
 create table countries
 (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     name TEXT not null,
     flag TEXT not null
 );
 
 create table teams
 (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     name TEXT not null,
     shortName TEXT not null,
     crest TEXT not null,
@@ -49,7 +49,7 @@ create table teams
 
 create table coachs
 (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     firstName TEXT not null,
     lastName TEXT not null,
     dateOfBirth TIMESTAMP not null,
@@ -60,7 +60,7 @@ create table coachs
 
 create table players
 (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     firstName TEXT not null,
     lastName TEXT not null,
     position TEXT not null,
@@ -73,7 +73,7 @@ create table players
 
 create table matchs
 (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     utcDate TIMESTAMP not null,
     status TEXT not null,
     score_home INT,
@@ -86,7 +86,7 @@ create table matchs
 
 create table forum
 (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     userId INT not null,
     message TEXT not null,
     createdAt TIMESTAMP not null,
@@ -95,7 +95,7 @@ create table forum
 
 create table store
 (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     name TEXT not null,
     description TEXT not null,
     image TEXT not null,
