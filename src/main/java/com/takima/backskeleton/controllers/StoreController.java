@@ -20,7 +20,6 @@ import com.takima.backskeleton.services.StoreService;
 
 @RestController
 @RequestMapping("/stores")
-@CrossOrigin(origins = "http://localhost:4200")
 public class StoreController {
 
     private final StoreService storeService;
