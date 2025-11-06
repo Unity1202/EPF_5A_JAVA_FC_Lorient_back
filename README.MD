@@ -73,7 +73,7 @@ docker compose down
   - **models** : entités jpa avec annotations
   - **services** : logique métier
   - **controllers** : endpoints rest
-- **dto et mappers** pour la conversion sécurisée des données
+- **DTO et mappers** pour la conversion sécurisée des données
 - **bean** pour charger les variables d'environnement
 
 ### API REST
