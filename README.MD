@@ -16,7 +16,7 @@ Il permet de gérer toutes les données du club : joueurs, matchs, actualités, 
 ## Installations et configurations
 
 ### 1. Configuration des variables d'environnement
-Copiez le fichier `env.example` dans un fichier `.env` et remplissez-le avec vos credentials :
+Copiez le fichier `.env.example` dans un fichier `.env` et remplissez-le avec vos credentials :
 ```bash
 DATABASE_NAME=your_database_name
 DATABASE_USER=your_database_user
